@@ -1,0 +1,10 @@
+{
+    "git.autofetch": true,
+    "git.autofetchPeriod": 180,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.postCommitCommand": "sync",
+    "git.showPushSuccessNotification": true,
+    "git.fetchOnPull": true,
+    "git.pruneOnFetch": true
+}
