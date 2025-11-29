@@ -141,7 +141,6 @@ header#home {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding-top: 70px;
     position: relative;
     overflow: hidden;
@@ -192,36 +191,135 @@ header#home::after {
 .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
+}
+
+/* Hero Grid - 2 colonnes */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-text {
+    padding-right: 20px;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl), 0 0 40px var(--glow-primary);
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
     font-weight: 900;
     letter-spacing: -2px;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
-header h2 {
-    font-size: 2rem;
+header h1 .highlight-name {
     background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 700;
+    font-size: 4.2rem;
+    display: inline-block;
+}
+
+header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
     margin-top: 0;
     margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+header h2 em {
+    color: var(--primary);
+    font-style: italic;
+    font-weight: 700;
+}
+
+header h2 .accent-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 2rem;
 }
 
 header p {
-    max-width: 700px;
-    margin: 0 auto 2rem;
+    max-width: 600px;
+    margin: 0 0 2rem 0;
     color: var(--text-secondary);
     font-size: 1.15rem;
     line-height: 1.8;
+}
+
+/* Mise en forme des éléments importants dans le paragraphe */
+header p .age-location {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+header p .location {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: italic;
+}
+
+header p .origin {
+    color: var(--primary-dark);
+    font-style: italic;
+    font-weight: 500;
+}
+
+header p .key-skill {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+header p .tech-tools {
+    color: var(--primary);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+header p .mission {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 /* ============================================
@@ -232,7 +330,7 @@ header p {
     margin-top: 2rem;
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 button {
@@ -708,12 +806,64 @@ footer p {
    ============================================ */
 
 @media (max-width: 768px) {
+    /* Hero Grid - passe en 1 colonne sur mobile */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1; /* Photo en premier sur mobile */
+    }
+
+    .image-wrapper {
+        max-width: 300px;
+    }
+
     header h1 {
         font-size: 2.5rem;
     }
 
+    header h1 .highlight-name {
+        font-size: 3rem;
+    }
+
     header h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    header h2 .accent-text {
+        font-size: 1.6rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    header p .age-location {
+        font-size: 1.15rem;
+    }
+
+    header p .key-skill {
+        font-size: 1.1rem;
+    }
+
+    header p .tech-tools {
+        font-size: 1rem;
+    }
+
+    header p .mission {
+        font-size: 1.05rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .about-content {
@@ -735,3 +885,5 @@ footer p {
         font-size: 2rem;
     }
 }
+
+https://julien-animateur.fr/wp-content/uploads/2025/07/Design-sans-titre-13.png
