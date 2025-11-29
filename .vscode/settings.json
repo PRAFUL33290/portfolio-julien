@@ -6,5 +6,6 @@
     "git.postCommitCommand": "sync",
     "git.showPushSuccessNotification": true,
     "git.fetchOnPull": true,
-    "git.pruneOnFetch": true
+    "git.pruneOnFetch": true,
+    "liveServer.settings.port": 5501
 }
